@@ -1,0 +1,24 @@
+
+<body>
+    
+<section class="sectionOfNavigate">
+    <h1 class="sectionTitle" ><span>导航:</span></h1>
+    <nav class="navigate"><!-- 修改路径还要去rout里面添加或删除 -->
+        <a routerLink="/interface" routerLinkActive="active">返回登录界面</a>
+        <a routerLink="/showmetheinfermation" routerLinkActive="active">显示桥梁信息</a>
+        <a routerLink="/createnewbridge" routerLinkActive="active">添加桥梁信息</a>
+        <a routerLink="/dailyspecialtable" routerLinkActive="active" >巡检表(日/特)</a>
+        <div class="animate start_interface"></div>
+    </nav>
+</section>
+<section class="sectionMap">
+    <div class="mapButton">
+    <button class="addSign" id="goBack" (click)="goBack()">回归初始</button>
+    <button class="addSign" id="addMarker"  (click)="addSign()"  >添加桥梁标记</button>
+    <button class="addSign" id="deleteMarker">删除桥梁标记</button>
+    </div>
+    <div id = "map" ></div>
+    <!-- <h2>我是主页面</h2> -->
+</section>
+</body>
+<!-- <button (click)="aa()">按我表点</button> -->

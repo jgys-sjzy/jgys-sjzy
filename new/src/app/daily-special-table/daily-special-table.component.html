@@ -1,0 +1,192 @@
+<body>
+    <!-- <div class="heading" type="button">巡检表单填写</div> -->
+    <button class="headingbtn" (click)="headingbtn()">巡检表单填写---（点击我切换查看）</button>
+    <div class="common">
+        <div class="input">
+            
+        巡检人员名称：<input type="text" placeholder="请输入用户名" [(ngModel)]="daily_sepcial_user.DS_user">
+        巡检账户密码：<input type="text" placeholder="请输入密码" [(ngModel)]="daily_sepcial_user.DS_pwd">
+
+        </div>
+        <div class="input">
+        填写桥梁ID：<input type="text" placeholder="请输入你需要填写的桥梁ID" [(ngModel)]="input_bridgeID">
+        <button class="CIDbtn" (click)="getMZLK()">生成表单检测ID</button>
+    </div>
+    </div>
+
+    <div class="select">
+       
+        <button (click)="showdaily()">日常巡检表</button>
+        <button (click)="showspecia()">特殊检测报表</button>
+        <button (click)="showtechnology()">技术评估表</button>
+        <button (click)="showmonitor()">监测内容表</button>
+        <button (click)="showstru()">特殊构件表</button>
+        <button (click)="showstru_check()">结构状况表</button>
+    </div>
+
+
+    <!-- 日常巡检表，-->
+    <div class="daily" #daily *ngIf="daily">
+        <div>
+        <input type="text" [(ngModel)]="daily_table.check_table_no" placeholder="日常巡检报表编号（默认值）">
+        <input type="text" [(ngModel)]="daily_table.bri_no" placeholder="桥梁编号（默认值）">
+        <input type="text" [(ngModel)]="daily_table.bri_name" placeholder="桥梁名称（默认值）">
+        <input type="text" [(ngModel)]="daily_table.check_unit" placeholder="巡检单位">
+        </div>
+        
+        <div>
+        <input type="text" [(ngModel)]="daily_table.whether_intact" placeholder="是否完好">
+        <input type="text" [(ngModel)]="daily_table.dam_type" placeholder="损坏类型">
+        <input type="text" [(ngModel)]="daily_table.dam_number" placeholder="损坏数量">
+        <input type="text" [(ngModel)]="daily_table.dam_location" placeholder="损坏位置">
+        </div>
+
+        <div>
+        <input type="text" [(ngModel)]="daily_table.remark" placeholder="备注">
+        <input type="text" [(ngModel)]="daily_table.check_people" placeholder="巡检人（默认值）">
+        <input type="text" [(ngModel)]="daily_table.check_date" placeholder="巡检日期">
+        </div>
+
+    </div>
+
+
+    <!-- 特殊检测-->
+    <div class="specia" #specia *ngIf="specia">
+        <div>
+        <input type="text" placeholder="特殊检测报表编号（默认值）" [(ngModel)]="special_table.check_table_no">
+        <input type="text" placeholder="桥梁编号（默认值）" [(ngModel)]="special_table.bri_no">
+        <input type="text" placeholder="桥梁名称（默认值）" [(ngModel)]="special_table.bri_name">
+        <input type="text" placeholder="检测单位" [(ngModel)]="special_table.check_unit">
+        
+        </div>
+
+        <div>
+        <input type="text" placeholder="检测部位" [(ngModel)]="special_table.check_place">
+        <input type="text" placeholder="检测时间" [(ngModel)]="special_table.check_date">
+        <input type="text" placeholder="检测过程" [(ngModel)]="special_table.check_pro">
+        <input type="text" placeholder="桥梁技术状况" [(ngModel)]="special_table.bri_tec_info">
+        </div>
+
+        <div>
+        <input type="text" placeholder="桥梁试验" [(ngModel)]="special_table.bri_test">
+        <input type="text" placeholder="检测项目" [(ngModel)]="special_table.check_aim">
+        <input type="text" placeholder="检测方法" [(ngModel)]="special_table.check_way">
+        <input type="text" placeholder="损坏原因" [(ngModel)]="special_table.dam_cause">
+         </div>
+
+         <div>
+        <input type="text" placeholder="损坏程度" [(ngModel)]="special_table.dam_deg">
+        <input type="text" placeholder="继续使用安全性" [(ngModel)]="special_table.use_safe">
+        <input type="text" placeholder="维护管理方案" [(ngModel)]="special_table.man_way">
+        </div>
+    </div>
+
+
+
+    <!-- 技术 -->
+    <div class="technology" #technology *ngIf="technology">
+        <div>
+        <input type="text" placeholder="技术评估编号（默认值）" [(ngModel)]="technology_table.eva_no">
+        <input type="text" placeholder="桥梁编号（默认值）" [(ngModel)]="technology_table.bri_no">
+        <input type="text" placeholder="桥梁名称（默认值）" [(ngModel)]="technology_table.bri_name">
+        <input type="text" placeholder="桥面铺装" [(ngModel)]="technology_table.bri_deck_pave">
+        
+        </div>
+        <div>
+        <input type="text" placeholder="桥头平顶" [(ngModel)]="technology_table.bri_table">
+        <input type="text" placeholder="伸缩缝" [(ngModel)]="technology_table.exp_joint">
+        <input type="text" placeholder="排水系统" [(ngModel)]="technology_table.dra_system">
+        <input type="text" placeholder="空腹式" [(ngModel)]="technology_table.emsto_type">
+        </div>
+        <div>
+        <input type="text" placeholder="实腹式" [(ngModel)]="technology_table.resto_type">
+        <input type="text" placeholder="拱脚" [(ngModel)]="technology_table.skew_back">
+        <input type="text" placeholder="墩台" [(ngModel)]="technology_table.abutment">
+        <input type="text" placeholder="基础" [(ngModel)]="technology_table.base">
+        </div>
+        <div>
+        <input type="text" placeholder="耳背翼墙" [(ngModel)]="technology_table.behwwall">
+        <input type="text" placeholder="台帽梁盖" [(ngModel)]="technology_table.cap_cover">
+        <input type="text" placeholder="栏杆" [(ngModel)]="technology_table.handrall">
+        <input type="text" placeholder="人行道块件" [(ngModel)]="technology_table.sid_piece">
+        </div>
+        <div>
+        <input type="text" placeholder="钢结构物" [(ngModel)]="technology_table.st_stru">
+        <input type="text" placeholder="评估日期" [(ngModel)]="technology_table.eva_date">
+        </div>
+    </div>
+
+
+    <!-- 检测 -->
+    <div class="monitor" #monitor *ngIf="monitor">
+        <div>
+        <input type="text" placeholder="监测内容编号（默认值）" [(ngModel)]="monitor_table.monit_content_no">
+        <input type="text" placeholder="桥梁编号（默认值）" [(ngModel)]="monitor_table.bri_no">
+        <input type="text" placeholder="桥梁名称（默认值）" [(ngModel)]="monitor_table.bri_name">
+        <input type="text" placeholder="桥梁类型" [(ngModel)]="monitor_table.bri_type">
+        </div>
+        <div>
+        <input type="text" placeholder="桥梁控制截面" [(ngModel)]="monitor_table.bri_control_section">
+        <input type="text" placeholder="桥墩转角" [(ngModel)]="monitor_table.pier_corner">
+        <input type="text" placeholder="基础转角" [(ngModel)]="monitor_table.base_corner">
+        <input type="text" placeholder="支座转角" [(ngModel)]="monitor_table.admi_cerner">
+        </div>  
+        <div>
+        <input type="text" placeholder="缆索拉力" [(ngModel)]="monitor_table.haw_pull">
+        <input type="text" placeholder="预应力钢丝的松弛" [(ngModel)]="monitor_table.stwire_flabby">
+        <input type="text" placeholder="结构的震动" [(ngModel)]="monitor_table.stru_shake">
+        <input type="text" placeholder="监测日期" [(ngModel)]="monitor_table.monit_date">
+        </div>
+    </div>
+
+
+    <!-- 特殊构件 -->
+    <div class="stru" #stru *ngIf="stru">
+        
+        <div>
+        <input type="text" placeholder="桥梁名称（默认值）" [(ngModel)]="stru_table.bri_name">
+        <input type="text" placeholder="构件编号（默认值）" [(ngModel)]="stru_table.comp_no">
+        <input type="text" placeholder="构件名称" [(ngModel)]="stru_table.comp_name">
+        <input type="text" placeholder="监测单位" [(ngModel)]="stru_table.check_unit">
+        
+        
+        </div>
+        <div>
+         <input type="text" placeholder="日期" [(ngModel)]="stru_table.date">
+        <input type="text" placeholder="部件" [(ngModel)]="stru_table.assembly">
+        <input type="text" placeholder="信息或注释" [(ngModel)]="stru_table.info_remark">
+        <input type="text" placeholder="检测人员（默认值）" [(ngModel)]="stru_table.check_people">
+        </div>
+    </div>
+
+    <!-- 结构状况  stru_check -->
+    <div class="stru_check" #stru_check *ngIf="stru_check">
+            <div>
+            <input type="text" placeholder="定期检查编号（默认值）" [(ngModel)]="stru_check_table.regular_check_table">
+            <input type="text" placeholder="桥梁编号（默认值）" [(ngModel)]="stru_check_table.bri_no">
+            <input type="text" placeholder="桥梁名称（默认值）" [(ngModel)]="stru_check_table.bri_name">
+            <input type="text" placeholder="构件名称（默认值）" [(ngModel)]="stru_check_table.comp_name">
+            
+            </div>
+            <div>
+            <input type="text" placeholder="构件编号（默认值）" [(ngModel)]="stru_check_table.comp_no">
+             <input type="text" placeholder="检测单位" [(ngModel)]="stru_check_table.check_unit">
+             <input type="text" placeholder="巡检日期" [(ngModel)]="stru_check_table.check_date">
+            <input type="text" placeholder="部件" [(ngModel)]="stru_check_table.assembly">
+            </div>
+            <div>
+            <input type="text" placeholder="状态" [(ngModel)]="stru_check_table.state">
+            <input type="text" placeholder="损坏类型" [(ngModel)]="stru_check_table.dam_type">
+            <input type="text" placeholder="损坏程度" [(ngModel)]="stru_check_table.dam_degree">
+            <input type="text" placeholder="损坏位置" [(ngModel)]="stru_check_table.dam_location">
+            </div>
+            <div>
+            <input type="text" placeholder="侵蚀分类" [(ngModel)]="stru_check_table.eros_type">
+            <input type="text" placeholder="备注" [(ngModel)]="stru_check_table.remark">
+            <input type="text" placeholder="检测人员（默认值）" [(ngModel)]="stru_check_table.check_people">
+            </div>
+            
+    </div>
+
+    <button class="submit" (click)="submit_daily_special()">提交</button>
+</body>

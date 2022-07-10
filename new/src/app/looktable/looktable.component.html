@@ -1,0 +1,182 @@
+<body>
+
+<!-- 日常巡检表，-->
+<div class="daily" #daily *ngIf="daily">
+   
+   <div class="aa">
+    <div>日常巡检报表编号:{{all_daily_table[0].check_table_no}}</div>
+    <div>桥梁编号:{{all_daily_table[0].bri_no}}</div>
+    <div>桥梁名称:{{all_daily_table[0].bri_name}}</div>
+    <div>巡检单位:{{all_daily_table[0].check_unit}}</div>
+    </div>
+    
+    
+    <div class="aa">
+    <div>是否完好:{{all_daily_table[0].whether_intact}}</div>
+    <div>损坏类型:{{all_daily_table[0].dam_type}}</div>
+    <div>损坏数量:{{all_daily_table[0].dam_number}}</div>
+    <div>损坏位置:{{all_daily_table[0].dam_location}}</div>
+    </div>
+
+    <div class="aa">
+    <div>备注:{{all_daily_table[0].remark}}</div>
+    <div>巡检人:{{all_daily_table[0].check_people}}</div>
+    <div>巡检日期:{{all_daily_table[0].check_date}}</div>
+    </div>
+
+</div>
+
+
+<!-- 特殊检测-->
+<div class="daily" #specia *ngIf="specia">
+   
+    <div class="aa">
+    <div>特殊检测报表编号:{{all_special_table[0].check_table_no}}</div>
+    <div>桥梁编号:{{all_special_table[0].bri_no}}</div>
+    <div>桥梁名称:{{all_special_table[0].bri_name}}</div>
+    <div>检测单位:{{all_special_table[0].check_unit}}</div>    
+    </div>
+
+    <div class="aa">
+        <div>检测部位:{{all_special_table[0].check_place}}</div> 
+        <div>检测时间:{{all_special_table[0].check_date}}</div> 
+        <div>检测过程:{{all_special_table[0].check_pro}}</div> 
+        <div>桥梁技术状况:{{all_special_table[0].bri_tec_info}}</div> 
+    </div>
+
+    <div class="aa">
+        <div>桥梁试验:{{all_special_table[0].bri_test}}</div>
+        <div>检测项目:{{all_special_table[0].check_aim}}</div>
+        <div>检测方法:{{all_special_table[0].check_way}}</div>
+        <div>损坏原因:{{all_special_table[0].dam_cause}}</div>
+     </div>
+
+     <div class="aa">
+        <div>损坏程度:{{all_special_table[0].dam_deg}}</div>
+        <div>继续使用安全性:{{all_special_table[0].use_safe}}</div>
+        <div>维护管理方案:{{all_special_table[0].man_way}}</div>
+    </div>
+</div>
+
+
+
+<!-- 技术 -->
+<div class="daily" #technology *ngIf="technology">
+  
+  <div class="aa">
+      <div>技术评估编号:{{all_technology_table[0].eva_no}}</div>
+      <div>桥梁编号:{{all_technology_table[0].bri_no}}</div>
+      <div>桥梁名称:{{all_technology_table[0].bri_name}}</div>
+      <div>桥面铺装:{{all_technology_table[0].bri_deck_pave}}</div>
+    </div>
+    <div class="aa">
+        <div>桥头平顶:{{all_technology_table[0].bri_table}}</div>
+        <div>伸缩缝:{{all_technology_table[0].exp_joint}}</div>
+        <div>排水系统:{{all_technology_table[0].dra_system}}</div>
+        <div>空腹式:{{all_technology_table[0].emsto_type}}</div>
+    </div>
+    <div class="aa">
+        <div>实腹式:{{all_technology_table[0].resto_type}}</div>
+        <div>拱脚:{{all_technology_table[0].skew_back}}</div>
+        <div>墩台:{{all_technology_table[0].abutment}}</div>
+        <div>基础:{{all_technology_table[0].base}}</div>
+    </div>
+    <div class="aa">
+        <div>耳背翼墙:{{all_technology_table[0].behwwall}}</div>
+        <div>台帽梁盖:{{all_technology_table[0].cap_cover}}</div>
+        <div>栏杆:{{all_technology_table[0].handrall}}</div>
+        <div>人行道块件:{{all_technology_table[0].sid_piece}}</div>
+
+    </div>
+    <div class="aa">
+        <div>钢结构物:{{all_technology_table[0].st_stru}}</div>
+        <div>评估日期:{{all_technology_table[0].eva_date}}</div>
+    </div>
+</div>
+
+
+<!-- 检测 -->
+<div class="daily" #monitor *ngIf="monitor">
+   
+   <div class="aa">
+       <div>监测内容编号:{{all_monitor_table[0].monit_content_no}}</div>
+       <div>桥梁编号:{{all_monitor_table[0].bri_no}}</div>
+       <div>桥梁名称:{{all_monitor_table[0].bri_name}}</div>
+       <div>桥梁类型:{{all_monitor_table[0].bri_type}}</div>
+
+    </div>
+    <div class="aa">
+        <div>桥梁控制截面:{{all_monitor_table[0].bri_control_section}}</div>
+        <div>桥墩转角:{{all_monitor_table[0].pier_corner}}</div>
+        <div>基础转角:{{all_monitor_table[0].base_corner}}</div>
+        <div>支座转角:{{all_monitor_table[0].admi_cerner}}</div>
+
+    </div>  
+    <div class="aa">
+        <div>缆索拉力:{{all_monitor_table[0].haw_pull}}</div>
+        <div>预应力钢丝的松弛:{{all_monitor_table[0].stwire_flabby}}</div>
+        <div>结构的震动:{{all_monitor_table[0].stru_shake}}</div>
+        <div>监测日期:{{all_monitor_table[0].monit_date}}</div>
+
+    </div>
+</div>
+
+<!-- 结构状况  stru_check -->
+<div class="daily" #stru_check *ngIf="stru_check">
+    
+    <div class="aa">
+        <div>定期检查编号:{{all_structure_checking_table[0].regular_check_table}}</div>
+        <div>桥梁编号:{{all_structure_checking_table[0].bri_no}}</div>
+        <div>桥梁名称:{{all_structure_checking_table[0].bri_name}}</div>
+        <div>构件名称:{{all_structure_checking_table[0].comp_name}}</div>
+
+        
+        </div>
+        <div class="aa">
+            <div>构件编号:{{all_structure_checking_table[0].comp_no}}</div>
+            <div>检测单位:{{all_structure_checking_table[0].check_unit}}</div>
+            <div>巡检日期:{{all_structure_checking_table[0].check_date}}</div>
+            <div>部件:{{all_structure_checking_table[0].assembly}}</div>
+
+        </div>
+        <div class="aa">
+            <div>状态:{{all_structure_checking_table[0].state}}</div>
+            <div>损坏类型:{{all_structure_checking_table[0].dam_type}}</div>
+            <div>损坏程度:{{all_structure_checking_table[0].dam_degree}}</div>
+            <div>损坏位置:{{all_structure_checking_table[0].dam_location}}</div>
+
+        </div>
+        <div class="aa">
+            <div>侵蚀分类:{{all_structure_checking_table[0].eros_type}}</div>
+            <div>备注:{{all_structure_checking_table[0].remark}}</div>
+            <div>检测人员:{{all_structure_checking_table[0].check_people}}</div>
+
+        </div>
+    
+   
+    
+        
+</div>
+
+<!-- 特殊构件 -->
+<div class="daily" #stru *ngIf="stru">
+   
+   <div class="aa">
+       <div>桥梁名称（默认值）{{all_spe_stru_info_table[0].bri_name}}</div>
+       <div>构件编号（默认值）{{all_spe_stru_info_table[0].comp_no}}</div>
+       <div>构件名称{{all_spe_stru_info_table[0].comp_name}}</div>
+       <div>监测单位{{all_spe_stru_info_table[0].check_unit}}</div>
+    
+    
+    </div>
+    <div class="aa">
+        <div>日期{{all_spe_stru_info_table[0].date}}</div>
+        <div>部件{{all_spe_stru_info_table[0].assembly}}</div>
+        <div>信息或注释{{all_spe_stru_info_table[0].info_remark}}</div>
+        <div>检测人员（默认值）{{all_spe_stru_info_table[0].check_people}}</div>
+
+    </div>
+  
+</div>
+    
+</body>

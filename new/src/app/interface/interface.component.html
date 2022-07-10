@@ -1,0 +1,30 @@
+
+<body  >
+    <h2>登录界面</h2>
+
+<section class="loginWindowSection">
+    
+    <div  class="Hover">
+    <div class="loginWindow">
+         登录窗口
+    </div><br>
+    </div>
+        <div class="userSign">
+            <span class="passge">账号：</span>
+            
+            <input type="text" placeholder="请输入账号" [(ngModel)]="login_user.userName">
+        </div><br>
+            
+        <div class="userSign">
+            <span class="passge">密码：</span><input type="text"placeholder="请输入密码" [(ngModel)]="login_user.userPassWord">
+            <br>
+        </div><br>
+
+        <div id="divloginButton" >
+        <button id="loginButton" (click)=" userLogin($event)" >登录</button>
+        <button id="signButton"  (click)=" userSign()">注册</button>
+        </div>
+        
+
+</section>
+</body>

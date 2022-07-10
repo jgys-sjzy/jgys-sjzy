@@ -1,0 +1,177 @@
+<body>
+
+    <div class="heading">修改桥梁信息</div>
+    <div class="common">
+        <div class="input">
+        桥梁名称：<input type="text" placeholder="请输入桥梁名称" [(ngModel)]="S_MainZLK.bri_name">
+        桥梁ID：<input type="text" placeholder="请输入ID(经度$纬度)" [(ngModel)]="S_MainZLK.bri_no">
+        桥梁经度：<input type="text" placeholder="请输入经度" [(ngModel)]="S_MainZLK.lng">
+        </div>
+        <div class="input">
+        桥梁纬度：<input type="text" placeholder="请输入纬度" [(ngModel)]="S_MainZLK.lat">
+        桥梁等级：<input type="text" placeholder="请输入等级（1~5）" [(ngModel)]="S_MainZLK.maintain_type">
+        桥梁种类：<input type="text" placeholder="请输入种类" [(ngModel)]="S_MainZLK.bri_type">
+        </div>
+    </div>
+
+    <div class="select">
+       
+        <button (click)="showface()">一般资料卡</button>
+        <button (click)="showover()">上层结构</button>
+        <button (click)="showbelow()">下层结构</button>
+        <button (click)="showancillary()">附属工程</button>
+        <button (click)="showpipe()">附挂件管</button>
+    </div>
+
+
+    <!-- 平面  一般资料卡，-->
+    <div class="face" #face *ngIf="face">
+        <div>
+        <input type="text" [(ngModel)]="S_YBZLK.bri_no" placeholder="桥梁编号(不能为空)">
+        <input type="text" [(ngModel)]="S_YBZLK.adm_unit" placeholder="管理单位">
+        <input type="text" [(ngModel)]="S_YBZLK.maint_unit" placeholder="养护单位">
+        <input type="text" [(ngModel)]="S_YBZLK.build_unit" placeholder="建设单位">
+        </div>
+        <div>
+        <input type="text" [(ngModel)]="S_YBZLK.design_unit" placeholder="设计单位">
+        <input type="text" [(ngModel)]="S_YBZLK.supervisor_unit" placeholder="监理单位">
+        <input type="text" [(ngModel)]="S_YBZLK.readwork_unit" placeholder="施工单位">
+        <input type="text" [(ngModel)]="S_YBZLK.build_date" placeholder="建成年月">
+        </div>
+        <div>
+        <input type="text" [(ngModel)]="S_YBZLK.total_cost" placeholder="总造价">
+        <input type="text" [(ngModel)]="S_YBZLK.maintain_grade" placeholder="养护等级">
+        <input type="text" [(ngModel)]="S_YBZLK.road_grade" placeholder="道路等级">
+        <input type="text" [(ngModel)]="S_YBZLK.str_type" placeholder="结构类型">
+        </div>
+        <div>
+        <input type="text" [(ngModel)]="S_YBZLK.desige_load" placeholder="设计荷载">
+        <input type="text" [(ngModel)]="S_YBZLK.loadlim_norm" placeholder="限载标准">
+        <input type="text" [(ngModel)]="S_YBZLK.anti_seismic_capacity" placeholder="抗震烈度">
+        <input type="text" [(ngModel)]="S_YBZLK.zxiejiao" placeholder="正斜交角">
+        </div>
+        <div>
+        <input type="text" [(ngModel)]="S_YBZLK.bri_span_num" placeholder="桥梁跨数">
+        <input type="text" [(ngModel)]="S_YBZLK.kuajing_group" placeholder="跨径组合">
+        <input type="text" [(ngModel)]="S_YBZLK.brif_area" placeholder="桥面面积">
+        <input type="text" [(ngModel)]="S_YBZLK.bri_length" placeholder="桥梁总长">
+        </div>
+        <div>
+        <input type="text" [(ngModel)]="S_YBZLK.bri_wide" placeholder="桥梁总宽">
+        <input type="text" [(ngModel)]="S_YBZLK.roadw_wide" placeholder="车行道净宽">
+        <input type="text" [(ngModel)]="S_YBZLK.sidew_wide" placeholder="人行道净宽">
+        <input type="text" [(ngModel)]="S_YBZLK.river_grade" placeholder="河道等级">
+        </div>
+        <div>
+        <input type="text" [(ngModel)]="S_YBZLK.highest_w_level" placeholder="最高水位">
+        <input type="text" [(ngModel)]="S_YBZLK.often_w_level" placeholder="常水位">
+        </div>
+    </div>
+
+
+    <!-- 上层 -->
+    <div class="over" #over *ngIf="over">
+        <div>
+        <input type="text" placeholder="编号(必填否则不提交)" [(ngModel)]="S_TopSide.bri_no">
+        <input type="text" placeholder="主梁型式" [(ngModel)]="S_TopSide.kpost_type">
+        <input type="text" placeholder="主梁尺寸" [(ngModel)]="S_TopSide.kpost_size">
+        <input type="text" placeholder="主梁数量" [(ngModel)]="S_TopSide.kpost_number">
+        </div>
+        <div>
+        <input type="text" placeholder="横梁型式" [(ngModel)]="S_TopSide.beam_type">
+        <input type="text" placeholder="主跨桥下净空" [(ngModel)]="S_TopSide.kbottom_area">
+        <input type="text" placeholder="桥下限高" [(ngModel)]="S_TopSide.botlim_high">
+        <input type="text" placeholder="拱桥矢跨比" [(ngModel)]="S_TopSide.bri_skuabi">
+        </div>
+        <div>
+        <input type="text" placeholder="支座型式" [(ngModel)]="S_TopSide.adminicul_type">
+        <input type="text" placeholder="支座数量" [(ngModel)]="S_TopSide.adminicul_number">
+        <input type="text" placeholder="桥面结构" [(ngModel)]="S_TopSide.bri_floor_structure">
+        <input type="text" placeholder="桥面铺装厚度" [(ngModel)]="S_TopSide.bri_floor_pzthick">
+        </div>
+        <div>
+        <input type="text" placeholder="伸缩缝型式" [(ngModel)]="S_TopSide.exp_joint_type">
+        <input type="text" placeholder="伸缩缝数量" [(ngModel)]="S_TopSide.exp_jiont_number">
+        <input type="text" placeholder="主桥纵坡" [(ngModel)]="S_TopSide.kbri_zpo">
+        <input type="text" placeholder="主桥横坡" [(ngModel)]="S_TopSide.kbri_hpo">
+        </div>
+        <div>
+        <input type="text" placeholder="引桥纵坡" [(ngModel)]="S_TopSide.yqiao_zpo">
+        <input type="text" placeholder="引桥横坡" [(ngModel)]="S_TopSide.yqiao_hpo">
+        </div>
+    </div>
+
+
+
+    <!-- 下层 -->
+    <div class="below" #below *ngIf="below">
+        <div>
+        <input type="text" placeholder="编号(必填)" [(ngModel)]="S_BottomSide.bri_no">
+        <input type="text" placeholder="桥墩型式" [(ngModel)]="S_BottomSide.pier_type">
+        <input type="text" placeholder="桥墩数量" [(ngModel)]="S_BottomSide.pier_number">
+        <input type="text" placeholder="桥墩标高" [(ngModel)]="S_BottomSide.pier_high">
+        </div>
+        <div>
+        <input type="text" placeholder="桥墩盖梁尺寸" [(ngModel)]="S_BottomSide.pbent_size">
+        <input type="text" placeholder="桥墩基底标高" [(ngModel)]="S_BottomSide.pbot_high">
+        <input type="text" placeholder="桥墩底板尺寸" [(ngModel)]="S_BottomSide.pabut_slab_size">
+        <input type="text" placeholder="桥墩基桩尺寸" [(ngModel)]="S_BottomSide.pbas_size">
+        </div>
+        <div>
+        <input type="text" placeholder="桥墩基桩根数" [(ngModel)]="S_BottomSide.pbas_num">
+        <input type="text" placeholder="桥台型式" [(ngModel)]="S_BottomSide.qabut_type">
+        <input type="text" placeholder="桥台数量" [(ngModel)]="S_BottomSide.qabut_num">
+        <input type="text" placeholder="桥台标高" [(ngModel)]="S_BottomSide.qabut_high">
+        </div>
+        <div>
+        <input type="text" placeholder="桥台基底标高" [(ngModel)]="S_BottomSide.qbas_high">
+        <input type="text" placeholder="台帽尺寸" [(ngModel)]="S_BottomSide.qcap_size">
+        <input type="text" placeholder="桥台底板尺寸" [(ngModel)]="S_BottomSide.qbot_size">
+        <input type="text" placeholder="桥台基桩尺寸" [(ngModel)]="S_BottomSide.qbas_size">
+        </div>
+        <div>
+        <input type="text" placeholder="桥台基桩根数" [(ngModel)]="S_BottomSide.qbas_num">
+        <input type="text" placeholder="桥台挡土板厚度" [(ngModel)]="S_BottomSide.qabut_board_thick">
+        <input type="text" placeholder="翼墙形式" [(ngModel)]="S_BottomSide.wingwall_type">
+        <input type="text" placeholder="翼墙长度" [(ngModel)]="S_BottomSide.wingwall_length">    
+        </div>
+    </div>
+
+
+    <!-- 附属工程 -->
+    <div class="ancillary" #ancillary *ngIf="ancillary">
+        <div>
+        <input type="text" placeholder="编号(必填)" [(ngModel)]="S_Ancillary.bri_no">
+        <input type="text" placeholder="集水口尺寸" [(ngModel)]="S_Ancillary.jshuikou_size">
+        <input type="text" placeholder="集水口数量" [(ngModel)]="S_Ancillary.jshuikou_number">
+        <input type="text" placeholder="泄水管尺寸" [(ngModel)]="S_Ancillary.xshuiguan_size">
+        </div>
+        <div>
+        <input type="text" placeholder="泄水管长度" [(ngModel)]="S_Ancillary.xshuiguan_length">
+        <input type="text" placeholder="栏杆总长" [(ngModel)]="S_Ancillary.handrail_length">
+        <input type="text" placeholder="栏杆结构" [(ngModel)]="S_Ancillary.handrail_structure">
+        <input type="text" placeholder="端柱尺寸" [(ngModel)]="S_Ancillary.duanzhu_size">
+        </div>
+        <div>
+        <input type="text" placeholder="护岸类型" [(ngModel)]="S_Ancillary.revetment_type">
+        <input type="text" placeholder="引坡挡墙类型" [(ngModel)]="S_Ancillary.yingpodq_type">
+        </div>
+    </div>
+
+
+    <!-- 副挂件管 -->
+    <div class="pipe" #pipe *ngIf="pipe">
+        <div>
+        <input type="text" placeholder="编号(必填)" [(ngModel)]="S_SusPipe.bri_no">
+        <input type="text" placeholder="给水管" [(ngModel)]="S_SusPipe.serv_pipe">
+        <input type="text" placeholder="燃气管" [(ngModel)]="S_SusPipe.gas_pipe">
+        </div>
+        <div>
+        <input type="text" placeholder="电力缆" [(ngModel)]="S_SusPipe.power_cable">
+        <input type="text" placeholder="通讯电缆" [(ngModel)]="S_SusPipe.comm_cable">
+        </div>
+    </div>
+
+
+    <button class="submit" (click)="updata_submit()">提交</button>
+</body>

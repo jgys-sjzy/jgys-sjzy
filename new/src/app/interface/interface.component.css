@@ -1,0 +1,194 @@
+h2 {
+    font-size      : 40px;
+    color          : aliceblue;
+    background     : linear-gradient(120deg, rgb(83, 161, 250) 0%, rgb(8, 66, 212) 100%);
+    border-radius  : 30px;
+    height         : 50px;
+    width          : 190px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    animation      : interFace 3s infinite linear alternate
+}
+
+@keyframes interFace
+
+/*关键帧*/
+    {
+    0% {
+        background: #e7cebb
+    }
+
+    50% {
+        background: #0198db
+    }
+
+    100% {
+        background: #214a82
+    }
+}
+
+h2:hover {
+    animation-play-state: paused;
+    /* background       : linear-gradient(120deg,rgb(8, 66, 212) 0%,rgb(246, 55, 227) 100%); */
+}
+
+body {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    height         : 100vh;
+    border         : solid 1px;
+    background     : url(../../assets/images/R-C.jpg) no-repeat;
+    background-size: cover;
+}
+
+section.loginWindowSection {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    width          : 350px;
+    height         : 350px;
+    border-top     : 1px solid rgba(255, 255, 255, 0.5);
+    border-right   : 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom  : 1px solid rgba(255, 255, 255, 0.2);
+    border-left    : 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+div.Hover
+
+/* 为登录窗口增加感应hover空间*/
+    {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    width          : 120px;
+    height         : 35px;
+}
+
+div.loginWindow {
+    position           : absolute;
+    /* border          : 1px blue solid; */
+    display            : flex;
+    flex-direction     : column;
+    justify-content    : center;
+    align-items        : center;
+    font-size          : 20px;
+    color              : aliceblue;
+    text-align         : center;
+    border-radius      : 15px;
+    height             : 30px;
+    width              : 30%;
+    opacity            : 0.7;
+    /*透明度设置*/
+    /* 不要删！静态渐变色但运用空间不大 */
+    /* background      : linear-gradient(120deg,rgb(83, 161, 250) 0%,rgb(8, 66, 212) 100%); */
+    background         : linear-gradient(120deg, rgb(83, 161, 250) 0%, rgb(216, 5, 8) 100%);
+    /* background-color:rgb(83, 161, 250) ; */
+    background-size    : 300% 100%;
+    /* animation       : Login 3s infinite linear alternate; */
+
+}
+
+@keyframes Login {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+div.Hover:hover div.loginWindow
+
+/*Hover悬停的时候改变后面的loginWindow */
+    {
+    animation          : Login 2s infinite linear alternate;
+    transition-property: all;
+    transition-duration: 1.3s;
+    border-radius      : 5;
+    width              : 40%;
+    height             : 40px;
+    font-size          : 25px;
+    transform          : rotate(360deg);
+    /*旋转360*/
+}
+
+div.userSign {
+    font-size      : 17px;
+    color          : aliceblue;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : flex-start;
+    position       : relative;
+    margin-bottom  : 5px;
+}
+
+div.userSign>input {
+    width         : 250px;
+    height        : 35px;
+    font-size     : 17px;
+    color         : rgba(221, 83, 83, 0.9);
+    background    : rgba(255, 255, 255, 0.2);
+    border-radius : 8px;
+    letter-spacing: 2px;
+    /*输入间隔*/
+}
+
+div.userSign>span.passge {
+    margin-bottom: 5px;
+}
+
+#divloginButton {
+    width          : 70%;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+}
+
+#loginButton {
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(83, 161, 250, 0.3);
+    border-radius   : 5px;
+    font-size       : 20px;
+    width           : 30%;
+    height          : 36px;
+}
+
+#loginButton:hover {
+    transform       : translate(-2px);
+    background-color: rgba(7, 37, 201, 0.3);
+}
+
+#loginButton:active {
+    background-color: rgba(7, 37, 201, 0.6);
+
+}
+
+
+#signButton {
+    position        : relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(83, 161, 250, 0.3);
+    border-radius   : 5px;
+    font-size       : 20px;
+    width           : 30%;
+    height          : 36px;
+}
+
+#signButton:hover {
+    transform       : translate(-2px);
+    background-color: rgba(7, 37, 201, 0.3);
+}
+
+#signButton:active {
+    background-color: rgba(7, 37, 201, 0.6);
+}

@@ -1,0 +1,198 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.headingbtn
+{
+    display: block;
+    font-size: 20px;
+    width: 70vw;
+    height: 5vh;
+    line-height: 5vh;   /* 更高度一样可以保证里面的文字垂直居中 */
+    background-color: rgb(129, 196, 177);
+    margin-inline: auto;
+    border-radius: 8px;
+    border: rgb(181, 240, 223);
+    text-align: center;
+}
+.headingbtn:hover
+{
+    transform: translate(2px,0px);
+    background-color: rgb(161, 213, 198);
+}
+.headingbtn:active
+{
+    background-color: rgb(72, 154, 131);
+}
+
+.common
+{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 60px; */
+    /* padding: 40px; */
+    height: 15vh;
+}
+.common div
+{
+    border-radius: 10px;
+    border: 1px solid rgba(122, 112, 112, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    margin-top: 10px;
+    width: 70vw;
+    height: 100%;
+}
+
+.input input
+{
+    margin-right: 3%;
+    width:20%;
+    height: 80%;
+    border-radius: 8px;
+}
+
+.CIDbtn
+{
+    position        :relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(46, 131, 228, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    width           : 10%;
+    height          : 80%;
+    /* transform: translate(100px,0px); */
+    /* margin-inline: 5%; */
+}
+
+.select
+{
+    height: 10vh;
+    border-radius: 10px;
+    border: 1px solid rgba(122, 112, 112, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    
+}
+.select button
+{
+    position        : relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(46, 131, 228, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    width           : 8%;
+    height          : 50%;
+    margin-inline: 5%;
+}
+.select button:hover,.CIDbtn:hover
+{
+    transform       : translate(2px);
+    background-color: rgb(14, 111, 238);
+}
+.select button:active,.CIDbtn:active
+{
+    background-color: rgba(7, 37, 201, 1);
+}
+
+.daily,.specia,.technology,.monitor,.stru,.stru_check
+{
+    border: 1px solid rgba(122, 112, 112, 0.5);
+    width: 85vw;
+    height: 60vh;
+    margin-inline: auto;
+    margin-top: 1%;
+}
+
+.submit
+{
+    
+    position        :relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(46, 131, 228, 0.696);
+    border-radius   : 5px;
+    font-size       : 17px;
+    width           : 100px;
+    height          : 35px;
+    float: right;
+    transform: translate(-15vw);
+}
+.submit:hover
+{
+    transform: translate(-14.9vw);
+    background-color: rgb(14, 111, 238);
+}
+.submit:active
+{
+    background-color: rgba(7, 37, 201, 1);
+}
+
+
+.daily,.specia,.technology,.monitor,.stru,.stru_check
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.daily >div,.specia >div,.technology >div,.monitor >div,.stru >div,.stru_check >div
+{
+    
+    /* border: solid 1px red; */
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+.daily >div>input, .specia >div>input, .technology >div>input, .monitor >div>input, .stru >div>input, .stru_check >div>input
+{
+    margin-right: 5%;
+    margin-left: 5%;
+    width:14%;
+    height: 90%;
+    border-radius: 8px;
+}
+.daily >div>input
+{
+    color: rgb(50, 141, 246);   
+}
+
+.specia >div>input
+{
+    color: rgb(246, 50, 115);
+}
+
+.technology >div>input
+{
+    color: rgb(14, 181, 8);
+}
+
+.monitor>div>input
+{
+    color: rgb(187, 179, 38);
+}
+
+.stru>div>input
+{
+    color: blueviolet;
+}
+.stru_check >div>input
+{
+    color:brown
+}

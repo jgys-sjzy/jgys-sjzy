@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+.daily
+{
+    border-radius: 10px;
+    border: 1px solid rgba(122, 112, 112, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-top: 10px;
+    width: 80vw;
+    height: 70%;
+    margin-inline: auto;
+}
+.aa
+{
+    width: 100%;
+    height: 13%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    border: 1px rgb(160, 159, 164) solid;
+    border-radius: 10px;
+    /* margin-bottom: 2px; */
+}
+.aa>div
+{
+    width: 25%;
+    color           : aliceblue;
+    border          : 1px solid rgb(102, 160, 227);
+    background-color: rgba(6, 99, 206, 0.3);
+    border-radius   : 5px;
+    font-size       : 16px;
+    width           : 23%;
+    height          : 38px;
+    margin: auto;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,191 @@
+body
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-Title
+{
+    
+    /* position: absolute; */
+    text-transform: uppercase;
+    color: black;
+    background-color: rgb(121, 248, 242);
+    width: 90vw;
+    height: 10vh;
+    /* vertical-align: top; */
+    transform: translateY(-34vh);
+    text-align: center;
+    border-radius: 8px;
+}
+.first-Title span
+{
+    font-size: 35px;
+    display: block;
+    position:relative;
+    transform: translate(0,4vh);
+}
+.secend-Title
+{
+    
+    font-size: 20px;
+    width: 70vw;
+    height: 5vh;
+    line-height: 5vh;   /* 更高度一样可以保证里面的文字垂直居中 */
+    background-color: rgb(127, 102, 102);
+    transform: translateY(-34vh);
+    border-radius: 8px;
+    text-align: center;
+}
+.search
+{
+    height: 10vh;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    float: left;
+    transform: translateY(-29vh);
+    border: 1px solid rgba(122, 112, 112, 0.5);
+    border-radius: 10px;
+}
+.search input
+{
+    margin-left: 1%;
+}
+.search select          
+{
+    /* background-color: red; */
+    width:21%;
+    height: 50%;
+    margin-left: 1%;
+    border-radius: 8px;
+}
+.search input   
+{
+    width:21%;
+    height: 41%;
+    border-radius: 8px;
+}
+.searchBtn
+{
+    position        : relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(46, 131, 228, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    width           : 8%;
+    height          : 50%;
+    margin-left: 2%;
+}
+.searchBtn:hover {
+    transform       : translate(2px);
+    background-color: rgb(14, 111, 238);
+}
+
+.searchBtn:active {
+    background-color: rgba(7, 37, 201, 1);
+}
+.addBridgeList
+{
+    /* position        :absolute; */
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(46, 131, 228, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    transform: translate(-65vh,-13vw);
+    width           : 80px;
+    height          : 39px;
+    margin-left: 2%;
+}
+.addBridgeList:hover {
+    /* position: absolute; */
+    transform: translate(-64.6vh,-13vw);
+    background-color: rgb(14, 111, 238);
+}
+
+.addBridgeList:active {
+    background-color: rgba(7, 37, 201, 1);
+}
+.showTheInformation
+{
+    
+    position:absolute;
+    width: 70vw;
+    height: 50vh;
+    transform: translate(0,35%);
+    border: 1px solid rgba(122, 112, 112, 0.5);
+    border-radius: 10px;
+    
+} 
+
+.trS th
+{
+    height: 50px;
+    width: 210px;
+    border-bottom:1px solid rgb(173, 184, 184);
+}
+
+tr th
+{
+    height: 50px;
+    border-bottom:1px solid rgb(173, 184, 184);
+}
+
+
+.btnplace
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* 操作按钮增删 */
+.btnChange
+{
+    position        : relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(46, 131, 228, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    width           : 40%;
+    height          : 35px;
+    margin-inline: 5%;
+}
+.btnChange:hover {
+    transform       : translate(2px);
+    background-color: rgb(14, 111, 238);
+}
+
+.btnChange:active {
+    background-color: rgba(7, 37, 201, 1);
+}
+.btnDelete
+{
+    position        : relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(250, 83, 111);
+    background-color: rgba(228, 46, 46, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    width           : 40%;
+    height          : 35px;
+    margin-inline: 5%;
+}
+.btnDelete:hover
+{
+    transform       : translate(2px);
+    background-color: rgba(238, 17, 17, 0.966);
+}
+.btnDelete:active
+{
+    background-color: rgb(188, 5, 5);
+}

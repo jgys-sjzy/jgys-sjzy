@@ -1,0 +1,139 @@
+.headingbtn
+{
+    display: block;
+    font-size: 20px;
+    width: 70vw;
+    height: 5vh;
+    line-height: 5vh;   /* 更高度一样可以保证里面的文字垂直居中 */
+    background-color: rgb(217, 163, 150);
+    margin-inline: auto;
+    border-radius: 8px;
+    border: rgb(204, 141, 125);
+    text-align: center;
+}
+.headingbtn:hover
+{
+    transform: translate(2px,0px);
+    background-color: rgb(204, 141, 125);
+}
+.headingbtn:active
+{
+    background-color: rgb(184, 108, 88);
+}
+
+.select
+{
+    height: 10vh;
+    border-radius: 10px;
+    border: 1px solid rgba(122, 112, 112, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    
+}
+.select button
+{
+    position        : relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(46, 131, 228, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    width           : 8%;
+    height          : 50%;
+    margin-inline: 5%;
+}
+.select button:hover,.CIDbtn:hover
+{
+    transform       : translate(2px);
+    background-color: rgb(14, 111, 238);
+}
+.select button:active,.CIDbtn:active
+{
+    background-color: rgba(7, 37, 201, 1);
+}
+
+.daily,.specia,.technology,.monitor,.stru,.stru_check
+{
+    border: 1px solid rgba(122, 112, 112, 0.5);
+    width: 70vw;
+    height: 60vh;
+    margin-inline: auto;
+    margin-top: 1%;
+}
+
+.daily,.specia,.technology,.monitor,.stru,.stru_check
+{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+
+.trS th
+{
+    height: 50px;
+    width: 210px;
+    border-bottom:1px solid rgb(173, 184, 184);
+}
+
+tr th
+{
+    height: 50px;
+    border-bottom:1px solid rgb(173, 184, 184);
+}
+
+.btnplace
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* 操作按钮增删 */
+.btnChange
+{
+    position        : relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(83, 161, 250);
+    background-color: rgba(46, 131, 228, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    width           : 40%;
+    height          : 35px;
+    margin-inline: 5%;
+}
+.btnChange:hover {
+    transform       : translate(2px);
+    background-color: rgb(14, 111, 238);
+}
+
+.btnChange:active {
+    background-color: rgba(7, 37, 201, 1);
+}
+.btnDelete
+{
+    position        : relative;
+    color           : aliceblue;
+    border          : 1px solid rgb(250, 83, 111);
+    background-color: rgba(228, 46, 46, 0.696);
+    border-radius   : 5px;
+    font-size       : 15px;
+    width           : 40%;
+    height          : 35px;
+    margin-inline: 5%;
+}
+.btnDelete:hover
+{
+    transform       : translate(2px);
+    background-color: rgba(238, 17, 17, 0.966);
+}
+.btnDelete:active
+{
+    background-color: rgb(188, 5, 5);
+}

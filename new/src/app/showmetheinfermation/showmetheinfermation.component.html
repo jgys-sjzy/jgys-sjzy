@@ -1,0 +1,65 @@
+<body>
+    <h1 class="first-Title"><span>all bridge information</span></h1>
+    <div class="secend-Title">首页/桥梁列表</div>
+    <section class="search">
+        <input type="text" [(ngModel)]="searchBridge.bri_no" placeholder="桥梁ID">  
+        <input type="text" [(ngModel)]="searchBridge.bri_name" placeholder="桥梁名称">   <!-- 名称 -->
+
+        <select name="level" id="" [(ngModel)]="searchBridge.maintain_type" >                  <!-- 等级-->
+            <option value="" >请选择等级</option>
+            <option value="1">等级一</option>
+            <option value="2">等级二</option>
+            <option value="3">等级三</option>
+            <option value="4">等级四</option>
+            <option value="5">等级五</option>
+        </select>            
+
+        <select name="sort" id="" [(ngModel)]="searchBridge.sort">    <!-- 升序还是降序  将数据倒过来就行了-->
+            <option value="asc">升序</option>
+            <option value="desc" selected>降序</option>   
+        </select>             
+
+        <button class="searchBtn" (click)="searchbtn()" >搜索</button>
+    </section>
+    <button class="addBridgeList" (click)="jumpToAddBridge()">增加</button>
+    <!-- 桥梁信息显示地 -->
+    <div class="showTheInformation">
+    <table>
+        <tr class="trS">
+            <th>桥梁ID</th>
+            <th>桥梁名称</th>
+            <th>桥梁等级</th>
+            <th>桥梁评分</th>
+            <th>操作</th>
+        </tr>
+        
+        <!-- <div *ngFor="let item of items; let i=index"></div> -->
+       <tr *ngFor="let item of bendishujuhuancun ;let key = index" >
+           <!-- <th>{{key}}</th> -->
+           <th>{{item.bri_no}}</th>
+           <th>{{item.bri_name}}</th>
+           <th>{{item.maintain_type}}</th>
+           <th>{{item.score}}</th>   
+           <th class="btnplace">
+               <button class="btnChange" (click)="changeInformation(item.bri_no)">修改</button>
+               <!-- <a routerLink="/createnewbridge" [queryParams]="{aid:key}" >修改</a> -->
+               <button class="btnDelete" (click)="deleteInformation(item.bri_no)">删除</button>
+            </th>
+       </tr>
+
+       <!-- <tr *ngFor="let item of bridgeList ;let key = index ;let length =bridgeList.length ">
+        
+        <th>{{item.bri_no}}</th>
+        <th>{{item.bri_name}}</th>
+        <th>{{item.maintain_type}}</th>
+        <th>{{item.bridgeScore}}</th>   
+        <th class="btnplace">
+            <button class="btnChange" (click)="changeInformation(item.bri_no)">修改</button>
+
+            <button class="btnDelete" (click)="deleteInformation(item.bri_no)">删除</button>
+         </th>
+    </tr> -->
+    </table>
+    </div>
+</body>
+

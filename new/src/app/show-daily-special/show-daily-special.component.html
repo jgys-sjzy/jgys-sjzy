@@ -1,0 +1,209 @@
+<body>
+    <!-- <div class="heading" type="button">巡检表单填写</div> -->
+    <button class="headingbtn" (click)="headingbtn()">巡检表单查看---（点击我切换添加填写）</button>
+    <!-- <div class="common">
+        <div class="input">
+            
+        巡检人员名称：<input type="text" placeholder="请输入用户名" [(ngModel)]="daily_sepcial_user.DS_user">
+        巡检账户密码：<input type="text" placeholder="请输入密码" [(ngModel)]="daily_sepcial_user.DS_pwd">
+
+        </div>
+        <div class="input">
+        填写桥梁ID：<input type="text" placeholder="请输入你需要填写的桥梁ID" [(ngModel)]="input_bridgeID">
+        <button class="CIDbtn" (click)="getMZLK()">生成表单检测ID</button>
+    </div>
+    </div> -->
+
+    <div class="select">
+       
+        <button (click)="showdaily()">日常巡检表</button>
+        <button (click)="showspecia()">特殊检测报表</button>
+        <button (click)="showtechnology()">技术评估表</button>
+        <button (click)="showmonitor()">监测内容表</button>
+        <button (click)="showstru_check()">结构状况表</button>
+        <button (click)="showstru()">特殊构件表</button>
+        
+    </div>
+
+
+    <!-- 日常巡检表，-->
+    <div class="daily" #daily *ngIf="daily">
+        <table>
+            <tr class="trS">
+                <th>日常巡检表单编号</th>
+                <th>桥梁ID</th>
+                <th>桥梁名称</th>
+                <th>巡检人</th>
+                <th>操作</th>
+            </tr>
+            
+            <!-- <div *ngFor="let item of items; let i=index"></div> -->
+           <tr *ngFor="let item of all_daily_table.data ;let key = index" >
+               <!-- <th>{{key}}</th> -->
+               <th>{{item.check_table_no}}</th>
+               <th>{{item.bri_no}}</th>
+               <th>{{item.bri_name}}</th>
+               <th>{{item.check_people}}</th>   
+               <th class="btnplace">
+
+                   <button class="btnChange" (click)="showInformation1(item.check_table_no)">查看</button>
+                   <!-- <a routerLink="/createnewbridge" [queryParams]="{aid:key}" >修改</a> -->
+                   <button class="btnDelete" (click)="deleteInformation(item.check_table_no)">删除</button>
+                </th>
+           </tr>
+        </table>
+
+    </div>
+
+
+    <!-- 特殊检测-->
+    <div class="specia" #specia *ngIf="specia">
+        <table>
+            <tr class="trS">
+                <th>特殊检测报表编号</th>
+                <th>桥梁ID</th>
+                <th>桥梁名称</th>
+                <th>检测单位</th>
+                <th>操作</th>
+            </tr>
+            
+            <!-- <div *ngFor="let item of items; let i=index"></div> -->
+           <tr *ngFor="let item of all_special_table.data;let key = index" >
+               <!-- <th>{{key}}</th> -->
+               <th>{{item.check_table_no}}</th>
+               <th>{{item.bri_no}}</th>
+               <th>{{item.bri_name}}</th>
+               <!-- 没有填写表单的人员就不改了 -->
+               <th>{{item.check_unit}}</th>   
+               <th class="btnplace">
+
+                   <button class="btnChange" (click)="showInformation2(item.check_table_no)">查看</button>
+                   <!-- <a routerLink="/createnewbridge" [queryParams]="{aid:key}" >修改</a> -->
+                   <button class="btnDelete" (click)="deleteInformation2(item.check_table_no)">删除</button>
+                </th>
+           </tr>
+        </table>
+    </div>
+
+
+
+    <!-- 技术 -->
+    <div class="technology" #technology *ngIf="technology">
+        <table>
+            <tr class="trS">
+                <th>技术评估编号</th>
+                <th>桥梁ID</th>
+                <th>桥梁名称</th>
+                <th>评估日期</th>
+                <th>操作</th>
+            </tr>
+            
+            <!-- <div *ngFor="let item of items; let i=index"></div> -->
+           <tr *ngFor="let item of all_technology_table.data;let key = index" >
+               <!-- <th>{{key}}</th> -->
+               <th>{{item.eva_no}}</th>
+               <th>{{item.bri_no}}</th>
+               <th>{{item.bri_name}}</th>
+               <!-- 没有填写表单的人员就不改了 -->
+               <th>{{item.eva_date}}</th>   
+               <th class="btnplace">
+
+                   <button class="btnChange" (click)="showInformation3(item.eva_no)">查看</button>
+                   <!-- <a routerLink="/createnewbridge" [queryParams]="{aid:key}" >修改</a> -->
+                   <button class="btnDelete" (click)="deleteInformation3(item.eva_no)">删除</button>
+                </th>
+           </tr>
+        </table>
+    </div>
+
+
+    <!-- 检测 -->
+    <div class="monitor" #monitor *ngIf="monitor">
+        <table>
+            <tr class="trS">
+                <th>监测内容编号</th>
+                <th>桥梁ID</th>
+                <th>桥梁名称</th>
+                <th>监测日期</th>
+                <th>操作</th>
+            </tr>
+            
+            <!-- <div *ngFor="let item of items; let i=index"></div> -->
+           <tr *ngFor="let item of all_monitor_table.data ;let key = index" >
+               <!-- <th>{{key}}</th> -->
+               <th>{{item.monit_content_no}}</th>
+               <th>{{item.bri_no}}</th>
+               <th>{{item.bri_name}}</th>
+               <!-- 没有填写表单的人员就不改了 -->
+               <th>{{item.monit_date}}</th>   
+               <th class="btnplace">
+
+                   <button class="btnChange" (click)="showInformation4(item.monit_content_no)">查看</button>
+                   <!-- <a routerLink="/createnewbridge" [queryParams]="{aid:key}" >修改</a> -->
+                   <button class="btnDelete" (click)="deleteInformation4(item.monit_content_no)">删除</button>
+                </th>
+           </tr>
+        </table>
+    </div>
+
+    <!-- 结构状况  stru_check -->
+    <div class="stru_check" #stru_check *ngIf="stru_check">
+        <table>
+            <tr class="trS">
+                <th>定期检查编号</th>
+                <th>构件编号</th>
+                <th>桥梁编号</th>
+                <th>检测人员</th>
+                <th>操作</th>
+            </tr>
+            
+            <!-- <div *ngFor="let item of items; let i=index"></div> -->
+           <tr *ngFor="let item of all_structure_checking_table.data ;let key = index" >
+               <!-- <th>{{key}}</th> -->
+               <th>{{item.regular_check_table}}</th>
+               <th>{{item.comp_no}}</th>
+               <th>{{item.bri_no}}</th>
+               <th>{{item.check_people}}</th>   
+               <th class="btnplace">
+
+                   <button class="btnChange" (click)="showInformation5(item.regular_check_table)">查看</button>
+                   <!-- <a routerLink="/createnewbridge" [queryParams]="{aid:key}" >修改</a> -->
+                   <button class="btnDelete" (click)="deleteInformation5(item.regular_check_table)">删除</button>
+                </th>
+           </tr>
+        </table>
+            
+    </div>
+
+    <!-- 特殊构件 -->
+    <div class="stru" #stru *ngIf="stru">
+        <table>
+            <tr class="trS">
+                <th>构件编号</th>
+                <th>构件名称</th>
+                <th>桥梁名称</th>
+                <th>检测人员</th>
+                <th>操作</th>
+            </tr>
+            
+            <!-- <div *ngFor="let item of items; let i=index"></div> -->
+           <tr *ngFor="let item of all_spe_stru_info_table.data ;let key = index" >
+               <!-- <th>{{key}}</th> -->
+               <th>{{item.comp_no}}</th>
+               <th>{{item.comp_name}}</th>
+               <th>{{item.bri_name}}</th>
+               <th>{{item.check_people}}</th>   
+               <th class="btnplace">
+
+                   <button class="btnChange" (click)="showInformation6(item.comp_no)">查看</button>
+                   <!-- <a routerLink="/createnewbridge" [queryParams]="{aid:key}" >修改</a> -->
+                   <button class="btnDelete" (click)="deleteInformation6(item.comp_no)">删除</button>
+                </th>
+           </tr>
+        </table>
+    </div>
+
+    
+
+    <!-- <button class="submit" (click)="submit_daily_special()">提交</button> -->
+</body>
