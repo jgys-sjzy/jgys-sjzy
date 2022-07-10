@@ -1,0 +1,74 @@
+<body>
+    
+
+<h1>通信软件开发与应用</h1>
+
+
+<div>
+<h2>关于项目的内容</h2>
+<p>项目是关于桥梁监测方面(由于本程序有node.js后台所以如果没有运行后台则会没有点的显示也无法进行增删改查)</p>
+</div>
+
+<div>
+    首先是界面：
+    界面采用了颜色变换的效果作用于和动画的效果当鼠标移动到登录窗口时可以看到登录窗口旋转变大
+    这是由于设置css当hover时角度旋转360度并改变北京颜色。而按钮则是采用伪类的hover，action时改变相应的样式达到动态的效果
+    <br>
+    <img src="../assets/images/屏幕截图 2022-07-10 105808.png" alt="" width="500px" height="300px">
+</div>
+
+<div>
+<p>主要功能有通过百度api点击地图获取经纬度自动生成桥梁ID，点击mark标可以查看相应的信息</p>
+<img src="../assets/images/屏幕截图 2022-07-10 105654.png" alt="" width="500px" height="300px">
+<p>导航栏由增加桥梁查看桥梁，增加日常巡检特殊巡检等相应的类容。</p>
+但在执行百度api时出现了很多问题，对于监听函数addlistener，的回调函数无法读取到this的问题，导致不能用匿名回调函数。<br>
+removelistener后再次监听就无法移出addlistener，因为他们的内存地址不在一样了。
+</div>
+
+<div>
+
+</div>
+关于桥梁的增删改查，通过点击地图新增一个点<br>
+<img src="../assets/images/屏幕截图 2022-07-10 105737.png" alt=""  width="600px" height="400px">
+<br>
+在桥梁信息显示中查看<br>
+<img src="../assets/images/屏幕截图 2022-07-10 105822.png" alt=""  width="600px" height="400px"><br>
+修改新增桥梁信息<br>
+<img src="../assets/images/屏幕截图 2022-07-10 105933.png" alt=""  width="600px" height="400px"><br>
+修改后的结果<br>
+<img src="../assets/images/屏幕截图 2022-07-10 105951.png" alt=""  width="600px" height="400px"><br>
+删除2个桥梁<br>
+<img src="../assets/images/屏幕截图 2022-07-10 110006.png" alt=""  width="600px" height="400px"><br>
+删除后的结果<br>
+<img src="../assets/images/屏幕截图 2022-07-10 110018.png" alt=""  width="600px" height="400px"><br>
+
+<div>
+    增加一个日常巡检表<br>
+    <img src="../assets/images/屏幕截图 2022-07-10 110100.png" alt=""  width="600px" height="400px"><br>
+    查看日常巡检表<br>
+    <img src="../assets/images/屏幕截图 2022-07-10 110155.png" alt=""  width="600px" height="400px"><br>
+    查询日常巡检表填写内容<br>
+    <img src="../assets/images/屏幕截图 2022-07-10 110210.png" alt=""  width="600px" height="400px"><br>
+    删除日常巡检表内容<br>
+    <img src="../assets/images/屏幕截图 2022-07-10 110224.png" alt=""  width="600px" height="400px"><br>
+</div>
+
+<h1>开发过程以及所遇到的相关问题</h1>
+
+<h2>开发过程</h2>
+
+<h3>1.如何选择前台后台</h3>
+在开发这个项目时首先并没有想好如何一体化的制作整个项目，在刚开始是原以为还可以直接通过网页连接到数据库直接进行增删改查，结果发现好像是不可能的。<br>
+于是有转而去学习后台，由于是第一次接触网页后台数据库的连接，完全不知到后台要干什么，后台要用那种语言来写。<br>
+现在想来哪种语言不是最重要的而是那种对于现在的我来说可以节约下时间来修改前台，毕竟是程序服务与用户而不是程序决定用户想看什么
+
+<h3>2.网页制作过程</h3>
+由于想尽可能做的好看，在登录界面和主界面倒是花了大量的实践去学习了有关于animation与transition来制作动态的网页效果，<br>
+由于之前没有没有制作过网页还去看了看相关的css以及什么是正则表达式，在制作网页时我还要首先想好网页的大致结构，在更具结构用position <br>
+和transform：translate来调整布局，在这其中absolute是以父类的范围来进行变化的而relative则是以本身来变化的。
+
+<h3>所遇到的困难</h3>
+网页做好了但要如何连接后台呢？以及王爷与王爷之间的传值也是很头疼的，查询了大量的资料，还是用了angular封装的obeserve来进行数值传递给服务器<br>
+而切传值的时候还要引入头文件httpheaders和httpclint等，由于没有引入花费了大量的使劲按来查找问题<br>
+还有一个问题就是node。js做的后台我设置的接口是8080而angular是4200出现了跨域问题，最后通过安装一个简单的插件cors 解决的
+</body>
